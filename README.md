@@ -1,9 +1,14 @@
 # Expense Tracker
-Expense Tracker Application
 
-# Steps to Run
-* Open the project in IntelliJIdea (That's where I have developed it)
-* Let it download the maven dependencies
-* Run ExpensetrackerApplication.java class to start the application
 
 ## Curl
+
+```
+curl --location --request POST 'localhost:8080/api/v1/user/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Joe Goldberg",
+    "email": "joeg@gmail.com",
+    "mobile": "9999988881"
+}'
+```
