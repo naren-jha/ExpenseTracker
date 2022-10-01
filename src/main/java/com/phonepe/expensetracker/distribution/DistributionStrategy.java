@@ -4,7 +4,7 @@ import com.phonepe.expensetracker.distribution.factory.DistributionType;
 import lombok.Builder;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -12,6 +12,6 @@ public class DistributionStrategy {
     private Long id;
     private DistributionType distributionType;
     private Integer order;
-    private Date createAt;
-    private Date updatedAt;
+    private LocalDateTime createAt;
+    private LocalDateTime updatedAt;
 }

@@ -27,6 +27,7 @@ public class GroupService {
         }
 
         group.setMembers(new HashSet<>());
+        group.setActivities(new ArrayList<>());
         groupRepository.addGroup(group);
         addGroupOwnerAsAdmin(group);
     }
@@ -53,12 +54,13 @@ public class GroupService {
                 .userMobile(user.getMobile())
                 .authority(UserGroupRole.ADMIN)
                 .build();
-        addUserToGroup(groupUserDTO);
+        addUserToGroup(group.getId(), groupUserDTO);
     }
 
-    public void addUserToGroup(GroupUserDTO groupUserDTO) {
+    public void addUserToGroup(Long groupId, GroupUserDTO groupUserDTO) {
 
-        Group group = getGroup(groupUserDTO.getGroupId());
+        groupUserDTO.setGroupId(groupId);
+        Group group = getGroup(groupId);
         if (Objects.isNull(group)) {
             throw new IllegalStateException(GROUP_DOES_NOT_EXIST_ERR_MSG);
         }
@@ -115,7 +117,7 @@ public class GroupService {
         }
 
         if (targetGroupUser == null) {
-            throw new IllegalStateException(MEMBER_NOT_PART_OF_GROUUP_ERR_MSG);
+            throw new IllegalStateException(MEMBER_NOT_PART_OF_GROUP_ERR_MSG);
         }
         if (group.getMembers().size() == 1) {
             throw new IllegalStateException(NOT_ENOUGH_MEMBER_IN_GROUP_ERR_MSG);

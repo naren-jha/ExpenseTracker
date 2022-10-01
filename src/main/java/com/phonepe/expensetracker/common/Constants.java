@@ -19,8 +19,18 @@ public interface Constants {
     String COULD_NOT_ADD_USER_TO_GROUP_ERR_MSG = "Could not add user to group. Please try again.";
     String USER_REMOVED_FROM_GROUP_SUCCESS_MSG = "User successfully removed from group!";
     String COULD_NOT_REMOVE_USER_TO_GROUP_ERR_MSG = "Could not remove user from group. Please try again.";
-    String MEMBER_NOT_PART_OF_GROUUP_ERR_MSG = "Cannot remove member. Given member is not part of the given group.";
+    String MEMBER_NOT_PART_OF_GROUP_ERR_MSG = "Cannot remove member. Given member is not part of the given group.";
     String NOT_ENOUGH_MEMBER_IN_GROUP_ERR_MSG = "Cannot remove member. Group has only one member.";
     String ONLY_ADMIN_IN_GROUP_ERR_MSG = "Cannot remove member. Given member is the only ADMIN of this group.";
     String COULD_NOT_DISTRIBUTE_EXPENSES_ERR_MSG = "Could not distribute expenses for the group. Please try again.";
+    String ACTIVITY_NAME_CANNOT_BE_NULL_ERR_MSG = "Activity name cannot be null or empty";
+    String ACTIVITY_GROUP_CANNOT_BE_NULL_ERR_MSG = "Activity group cannot be null";
+    String ACTIVITY_CREATED_BY_CANNOT_BE_NULL_ERR_MSG = "Activity createdBy cannot be null";
+    String ACTIVITY_PAID_BY_CANNOT_BE_NULL_ERR_MSG = "Activity paidBy cannot be null";
+    String ACTIVITY_AMOUNT_CANNOT_BE_ZERO_NEGATIVE_ERR_MSG = "Activity amount cannot be zero or negative";
+    String ACTIVITY_ID_NULL_ERR_MSG = "Activity id is null!";
+    String ACTIVITY_DOES_NOT_EXIST_ERR_MSG = "Activity does not exist!";
+    String ACTIVITY_CREATED_SUCCESS_MSG = "Activity created successfully!";
+    String COULD_NOT_CREATE_ACTIVITY_ERR_MSG = "Could not create activity. ";
+
 }

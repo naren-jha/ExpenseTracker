@@ -1,11 +1,12 @@
 package com.phonepe.expensetracker.group;
 
+import com.phonepe.expensetracker.activity.Activity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
@@ -19,12 +20,9 @@ public class Group {
     private String description;
     private Long createdBy; // created by user id
     private Set<GroupUser> members; // admins and normal users
-    private Date createAt;
-    private Date updatedAt;
+    private LocalDateTime createAt;
+    private LocalDateTime updatedAt;
     private Boolean deleted; // deleted groups are not visible to users anymore
     private Boolean closed; // closed groups are visible to users but no further transaction/activity can be added to them
-
-    public void divide() {
-        // TODO
-    }
+    private List<Activity> activities;
 }

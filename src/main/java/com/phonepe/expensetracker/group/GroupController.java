@@ -1,8 +1,6 @@
 package com.phonepe.expensetracker.group;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,11 +39,11 @@ public class GroupController {
             return ResponseEntity.status(HttpStatus.OK).body(group);
         }
         catch (IllegalArgumentException e) {
-            log.error("Group not found for null id", e);
+            log.error("Group not found", e);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
         catch (IllegalStateException e) {
-            log.error("Group not found for invalid id", e);
+            log.error("Group not found", e);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         catch (Exception e) {
@@ -68,10 +66,10 @@ public class GroupController {
         }
     }
 
-    @PostMapping("/user")
-    public ResponseEntity<String> addUserToGroup(@RequestBody GroupUserDTO groupUserDTO) {
+    @PostMapping("/{groupId}/user")
+    public ResponseEntity<String> addUserToGroup(@PathVariable("groupId") Long groupId, @RequestBody GroupUserDTO groupUserDTO) {
         try {
-            groupService.addUserToGroup(groupUserDTO);
+            groupService.addUserToGroup(groupId, groupUserDTO);
             return ResponseEntity.status(HttpStatus.CREATED)
                     .body(USER_ADDED_TO_GROUP_SUCCESS_MSG);
         }

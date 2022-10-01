@@ -6,8 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Data
@@ -22,7 +21,7 @@ public class User {
     private String mobile;
     private String gender;
     private Boolean registered;
-    private Date createAt;
-    private Date updatedAt;
+    private LocalDateTime createAt;
+    private LocalDateTime updatedAt;
     private Set<GroupUser> groups; // groups that user is member of
 }

@@ -1,8 +1,6 @@
 package com.phonepe.expensetracker.user;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.phonepe.expensetracker.common.Constants.*;
+import static com.phonepe.expensetracker.common.Constants.COULD_NOT_CREATE_USER_ERR_MSG;
+import static com.phonepe.expensetracker.common.Constants.USER_CREATED_SUCCESS_MSG;
 
 @Slf4j
 @RestController
@@ -42,11 +41,11 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body(user);
         }
         catch (IllegalArgumentException e) {
-            log.error("User not found for null id", e);
+            log.error("User not found", e);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
         catch (IllegalStateException e) {
-            log.error("User not found for invalid id", e);
+            log.error("User not found", e);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         catch (Exception e) {
