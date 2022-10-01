@@ -1,4 +1,4 @@
-package com.phonepe.expensetracker.distribution.strategy;
+package com.phonepe.expensetracker.distribution.factory;
 
 public enum DistributionType {
     EQUAL, EXACT, PERCENTAGE

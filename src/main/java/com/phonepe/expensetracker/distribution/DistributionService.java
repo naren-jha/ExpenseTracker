@@ -1,8 +1,8 @@
 package com.phonepe.expensetracker.distribution;
 
-import com.phonepe.expensetracker.distribution.strategy.Distribution;
-import com.phonepe.expensetracker.distribution.strategy.DistributionFactory;
-import com.phonepe.expensetracker.distribution.strategy.DistributionType;
+import com.phonepe.expensetracker.distribution.factory.Distribution;
+import com.phonepe.expensetracker.distribution.factory.DistributionFactory;
+import com.phonepe.expensetracker.distribution.factory.DistributionType;
 import com.phonepe.expensetracker.exception.NotFoundDistributionStrategy;
 import com.phonepe.expensetracker.group.Group;
 import com.phonepe.expensetracker.group.GroupService;

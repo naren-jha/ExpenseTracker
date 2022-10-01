@@ -1,8 +1,6 @@
 package com.phonepe.expensetracker.group;
 
-import com.phonepe.expensetracker.distribution.DistributionService;
-import com.phonepe.expensetracker.distribution.strategy.Distribution;
-import com.phonepe.expensetracker.distribution.strategy.DistributionType;
+import com.phonepe.expensetracker.distribution.factory.DistributionType;
 import com.phonepe.expensetracker.user.User;
 import com.phonepe.expensetracker.user.UserService;
 import org.apache.logging.log4j.util.Strings;

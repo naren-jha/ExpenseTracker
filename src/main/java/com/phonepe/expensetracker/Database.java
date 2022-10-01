@@ -1,7 +1,6 @@
 package com.phonepe.expensetracker;
 
 import com.phonepe.expensetracker.distribution.DistributionStrategy;
-import com.phonepe.expensetracker.distribution.strategy.DistributionType;
 import com.phonepe.expensetracker.group.Group;
 import com.phonepe.expensetracker.group.GroupUser;
 import com.phonepe.expensetracker.user.User;

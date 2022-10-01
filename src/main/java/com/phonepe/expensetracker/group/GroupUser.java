@@ -1,6 +1,6 @@
 package com.phonepe.expensetracker.group;
 
-import com.phonepe.expensetracker.distribution.strategy.DistributionType;
+import com.phonepe.expensetracker.distribution.factory.DistributionType;
 import lombok.*;
 
 import java.util.Date;

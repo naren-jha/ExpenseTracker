@@ -1,4 +1,4 @@
-package com.phonepe.expensetracker.distribution.strategy;
+package com.phonepe.expensetracker.distribution.factory;
 
 import com.phonepe.expensetracker.distribution.DistributeExpenseInput;
 import com.phonepe.expensetracker.distribution.DistributeExpenseOutput;

@@ -1,4 +1,4 @@
-package com.phonepe.expensetracker.distribution.strategy;
+package com.phonepe.expensetracker.distribution.factory;
 
 import com.phonepe.expensetracker.distribution.DistributeExpenseInput;
 import com.phonepe.expensetracker.distribution.DistributeExpenseOutput;
@@ -10,16 +10,16 @@ import java.util.List;
 
 @Component
 @Data
-public class ExactDistribution implements Distribution {
+public class PercentageDistribution implements Distribution {
 
     @Override
     public List<DistributeExpenseOutput> distributeExpenses(DistributeExpenseInput distributeExpenseInput) {
-        // TODO: to be implemented when needed
-        throw new NotImplementedDistributionStrategyException("ExactDistribution is not yet supported.");
+        // TODO: can be implemented when needed
+        throw new NotImplementedDistributionStrategyException("PercentageDistribution is not yet supported.");
     }
 
     @Override
     public DistributionType distributionType() {
-        return DistributionType.EXACT;
+        return DistributionType.PERCENTAGE;
     }
 }

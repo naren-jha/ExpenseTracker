@@ -1,6 +1,6 @@
 package com.phonepe.expensetracker.distribution;
 
-import com.phonepe.expensetracker.distribution.strategy.DistributionType;
+import com.phonepe.expensetracker.distribution.factory.DistributionType;
 import lombok.Builder;
 import lombok.Data;
 

@@ -1,6 +1,5 @@
-package com.phonepe.expensetracker.distribution.strategy;
+package com.phonepe.expensetracker.distribution.factory;
 
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
