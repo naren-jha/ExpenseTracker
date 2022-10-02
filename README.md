@@ -1,7 +1,8 @@
 # Expense Tracker
 
 ## How to run
-Run ExpensetrackerApplication.java and see the output in console
+* To run the application, run **ExpensetrackerApplication.java**
+* App will run for a sample input data. See the output in console.
 
 
 ## Curl
