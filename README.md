@@ -51,7 +51,7 @@ curl --location --request GET 'localhost:8080/api/v1/group/0'
 
 ### Add a User to a Group
 ```
-curl --location --request POST 'localhost:8080/api/v1/group/user' \
+curl --location --request POST 'localhost:8080/api/v1/group/0/user' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "groupId": 0,
@@ -63,4 +63,28 @@ curl --location --request POST 'localhost:8080/api/v1/group/user' \
 ### Remove a User from a Group
 ```
 curl --location --request DELETE 'localhost:8080/api/v1/group/0/user/0'
+```
+
+### Add an activity to a group
+```
+curl --location --request POST 'localhost:8080/api/v1/group/0/activity' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Grocery shopping",
+    "description": "veggies, dairy and other kitchen items",
+    "groupId": 0,
+    "createdBy": 0,
+    "paidBy": 4,
+    "amount": 25.0
+}'
+```
+
+### Get all activities in a group
+```
+curl --location --request GET 'localhost:8080/api/v1/group/0/activity'
+```
+
+### Distribute expenses in a group among group members
+```
+curl --location --request GET 'localhost:8080/api/v1/group/0/distribution'
 ```
