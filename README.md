@@ -1,5 +1,8 @@
 # Expense Tracker
 
+## How to run
+Run ExpensetrackerApplication.java and see the output in console
+
 
 ## Curl
 ### Create a new User

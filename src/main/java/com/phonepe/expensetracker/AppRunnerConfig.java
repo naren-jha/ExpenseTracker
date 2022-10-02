@@ -236,7 +236,8 @@ public class AppRunnerConfig {
 
             DistributionResponse response = distributionService.distributeExpenses(group1.getId());
             response.getDistributions().forEach(distributionTransaction -> {
-                log.info("User {} should pay amount {} to user {}", distributionTransaction.getFromUser(), distributionTransaction.getAmount(), distributionTransaction.getToUser());
+                log.info("User {} should pay amount {} to user {}",
+                        distributionTransaction.getFromUser(), distributionTransaction.getAmount(), distributionTransaction.getToUser());
             });
         };
     }
