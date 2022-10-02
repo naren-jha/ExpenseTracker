@@ -1,6 +1,6 @@
 package com.phonepe.expensetracker.group;
 
-enum UserGroupRole {
+public enum UserGroupRole {
     USER,
     ADMIN
 }

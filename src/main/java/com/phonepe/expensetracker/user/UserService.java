@@ -1,5 +1,6 @@
 package com.phonepe.expensetracker.user;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import java.util.*;
 
 import static com.phonepe.expensetracker.common.Constants.*;
 
+@Slf4j
 @Service
 public class UserService {
 
@@ -20,6 +22,7 @@ public class UserService {
 
         user.setGroups(new HashSet<>());
         userRepository.addUser(user);
+        log.info("User added: {}", user);
     }
 
     public User getUser(Long id) {

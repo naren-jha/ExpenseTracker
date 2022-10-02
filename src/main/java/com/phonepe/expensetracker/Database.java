@@ -17,7 +17,7 @@ public class Database {
     Map<Long, User> users = new HashMap<>();
     Map<Long, Group> groups = new HashMap<>();
     Set<GroupUser> groupUsers = new HashSet<>();
-    SortedMap<Integer, DistributionStrategy> distributionStrategies = new TreeMap<>();
+    Map<Long, DistributionStrategy> distributionStrategies = new HashMap<>();
     Map<Long, Activity> activities = new HashMap<>();
 
     public void addUser(User user) {
@@ -54,7 +54,7 @@ public class Database {
             distributionStrategy.setCreateAt(LocalDateTime.now());
             distributionStrategy.setUpdatedAt(LocalDateTime.now());
 
-            distributionStrategies.put(distributionStrategy.getOrder(), distributionStrategy);
+            distributionStrategies.put(distributionStrategy.getId(), distributionStrategy);
         });
     }
 

@@ -3,6 +3,7 @@ package com.phonepe.expensetracker.group;
 import com.phonepe.expensetracker.distribution.factory.DistributionType;
 import com.phonepe.expensetracker.user.User;
 import com.phonepe.expensetracker.user.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import java.util.*;
 
 import static com.phonepe.expensetracker.common.Constants.*;
 
+@Slf4j
 @Service
 public class GroupService {
 
@@ -29,6 +31,7 @@ public class GroupService {
         group.setMembers(new HashSet<>());
         group.setActivities(new ArrayList<>());
         groupRepository.addGroup(group);
+        log.info("Group added: {}", group);
         addGroupOwnerAsAdmin(group);
     }
 
@@ -90,12 +93,20 @@ public class GroupService {
                 .userId(user.getId())
                 .authority(groupUserDTO.getAuthority())
                 .distributionType(DistributionType.EQUAL) // default distribution type
-                .distributionValue(null) // no value needed for default distribution type (EQUAL)
+                .distributionValue(0.0) // NA for default distribution type (EQUAL)
                 .build();
+
+        if (Objects.nonNull(groupUserDTO.getDistributionType())) {
+            groupUser.setDistributionType(groupUserDTO.getDistributionType());
+        }
+        if (Objects.nonNull(groupUserDTO.getDistributionValue())) {
+            groupUser.setDistributionValue(groupUserDTO.getDistributionValue());
+        }
+
         addGroupUser(groupUser);
         group.getMembers().add(groupUser);
         user.getGroups().add(groupUser);
-
+        log.info("Member {} added to group {}", user.getId(), group.getId());
     }
 
     private void addGroupUser(GroupUser groupUser) {

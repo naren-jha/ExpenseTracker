@@ -1,11 +1,9 @@
 package com.phonepe.expensetracker.distribution.factory;
 
-import com.phonepe.expensetracker.distribution.DistributeExpenseInput;
-import com.phonepe.expensetracker.distribution.DistributeExpenseOutput;
-
-import java.util.List;
+import com.phonepe.expensetracker.distribution.dto.DistributeExpenseInput;
+import com.phonepe.expensetracker.distribution.dto.DistributionTypeResponse;
 
 public interface Distribution {
-    List<DistributeExpenseOutput> distributeExpenses(DistributeExpenseInput distributeExpenseInput);
+    DistributionTypeResponse distributeExpenses(DistributeExpenseInput distributeExpenseInput);
     DistributionType distributionType();
 }

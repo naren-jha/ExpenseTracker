@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class DistributionStrategy {
     private Long id;
     private DistributionType distributionType;
-    private Integer order;
+    private Integer executionOrder;
     private LocalDateTime createAt;
     private LocalDateTime updatedAt;
 }
